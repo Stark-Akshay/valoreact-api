@@ -4,7 +4,12 @@ const app = express();
 var cors = require("cors");
 const PORT = process.env.PORT;
 const MONGO_URL = process.env.MONGO_URL;
-const checkingRoute = require("./routes/checkingRoute");
+const {
+  validateURL,
+  extractVideoID,
+  verifyVideoMiddleware,
+  saveVideo,
+} = require("./controllers/checkingController");
 const { default: mongoose } = require("mongoose");
 
 // //cors option setting
@@ -15,7 +20,13 @@ const { default: mongoose } = require("mongoose");
 // //middlewares
 // app.use(cors(corsOptions));
 app.use(express.json());
-app.use("/api/checking", checkingRoute);
+app.use(
+  "/api/checking",
+  validateURL,
+  extractVideoID,
+  verifyVideoMiddleware,
+  saveVideo
+);
 
 app.get("/", (req, res) => {
   res.send("hello its working normally");
