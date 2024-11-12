@@ -1,3 +1,5 @@
+const { extractID } = require("../utils/extractID");
+
 // Middleware for extracting the video ID
 const extractVideoID = (req, res, next) => {
   const { url } = req.body;
