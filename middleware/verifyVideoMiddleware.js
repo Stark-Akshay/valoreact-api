@@ -12,10 +12,9 @@ const verifyVideoMiddleware = async (req, res, next) => {
     }
     next();
   } catch (err) {
-    console.error("Error verifying video:", err);
     res.status(500).json({
       success: false,
-      message: "Internal server error during verification",
+      message: "Please provide a public video URL",
     });
   }
 };

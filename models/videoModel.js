@@ -5,6 +5,7 @@ const videoSchema = mongoose.Schema({
   url: {
     type: String,
     required: [true, "Please enter the video link"],
+    unique: [true, "Sorry this video already exists in the view list"],
   },
   rank: {
     type: String,
@@ -13,6 +14,7 @@ const videoSchema = mongoose.Schema({
   riotID: {
     type: String,
     required: [true, "Please provide Riot ID"],
+    unique: [true, "Sorry this ID has already submited one clip"],
   },
 });
 
