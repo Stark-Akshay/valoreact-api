@@ -4,7 +4,7 @@ const verifyRiotID = (req, res, next) => {
   if (!riotID) {
     return res
       .status(400)
-      .json({ success: false, message: "Rank is not provided" });
+      .json({ success: false, message: "Riot ID is not provided" });
   }
   next();
 };
