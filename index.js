@@ -11,12 +11,12 @@ const checkingRoute = require("./routes/checkingRoute");
 const retriveRoute = require("./routes/retriveData");
 const deletionRoute = require("./routes/deleteData");
 
-// //cors option setting
-// var corsOptions = {
-//   origin: "http://localhost:3000",
-//   optionsSuccessStatus: 200,
-// };
-// app.use(cors(corsOptions));
+//cors option setting
+var corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 //Middlewares
 app.use(express.json());

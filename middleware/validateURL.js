@@ -1,6 +1,6 @@
 // Middleware for validating the URL
 const validateURL = (req, res, next) => {
-  console.log("inside url middleware");
+  // console.log("inside url middleware");
   const { url } = req.body;
   if (!url) {
     return res
