@@ -10,7 +10,7 @@ const { default: mongoose } = require("mongoose");
 const checkingRoute = require("./routes/checkingRoute");
 const retriveRoute = require("./routes/retriveData");
 const deletionRoute = require("./routes/deleteData");
-
+const registerRouter = require("./routes/registerUser");
 //cors option setting
 var corsOptions = {
   origin: "http://localhost:3000",
@@ -26,6 +26,8 @@ app.use("/api/checking", checkingRoute);
 app.use("/api/retriveOne", retriveRoute);
 
 app.use("/api/deleteData", deletionRoute);
+
+app.use("/api/registerUser", registerRouter);
 
 //Endpoints
 app.get("/", (req, res) => {
