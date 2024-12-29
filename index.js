@@ -14,7 +14,7 @@ const registerRouter = require("./routes/registerUser");
 const getUserRoute = require("./routes/checkUser");
 //cors option setting
 var corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://valoreacts.onrender.com",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
