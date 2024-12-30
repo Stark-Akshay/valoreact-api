@@ -14,7 +14,7 @@ const registerRouter = require("./routes/registerUser");
 const getUserRoute = require("./routes/checkUser");
 //cors option setting
 var allowedOrigins = [
-  "https://valoreacts.onrender.com/",
+  "https://valoreacts.onrender.com",
   "https://3.75.158.163",
   "https://3.125.183.140",
   "https://35.157.117.28",
@@ -31,6 +31,11 @@ var corsOptions = {
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+  console.log("Origin:", req.headers.origin);
+  next();
+});
 
 //Middlewares
 app.use(express.json());
