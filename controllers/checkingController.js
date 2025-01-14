@@ -13,7 +13,17 @@ const saveVideo = async (req, res) => {
     const video = await Video.create(data);
     res.status(200).json(video);
   } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
+    if (err.message.includes("E11000")) {
+      res
+        .status(500)
+        .json({
+          success: false,
+          message:
+            "Your video already exists in the list! Please wait for the reaction",
+        });
+    } else {
+      res.status(500).json({ success: false, message: err.message });
+    }
   }
 };
 
