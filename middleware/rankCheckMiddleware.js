@@ -3,6 +3,7 @@ const verifyRank = (req, res, next) => {
   const ValidRanks = [
     "Iron",
     "Bronze",
+    "Silver",
     "Gold",
     "Platinum",
     "Diamond",
