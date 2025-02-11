@@ -18,6 +18,7 @@ var allowedOrigins = [
   "https://3.75.158.163",
   "https://3.125.183.140",
   "https://35.157.117.28",
+  "https://valoreacts.vercel.app/",
 ];
 
 var corsOptions = {
